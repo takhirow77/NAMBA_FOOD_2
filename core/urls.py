@@ -20,13 +20,10 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 
-api_urlpatterns = [
-    path('todolist/', include('apps.todolist.urls')),
-]
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/v1/', include(api_urlpatterns)),
+    path('api/v1/about/', include('apps.about.urls')),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
